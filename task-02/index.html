@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a free orthopaedic consultation at OrthoNow. Expert knee and back pain specialists across Bengaluru. 9 clinics, 12,000+ patients." />
+  <title>Book a Free Orthopaedic Consultation | OrthoNow Bengaluru</title>
+
+  <style>
+    /* ── 1. CUSTOM PROPERTIES ── */
+    :root {
+      --color-bg:        #FFFFFF;
+      --color-surface:   #F7F8FA;
+      --color-primary:   #1A4FA0;   
+      --color-primary-d: #133A7A;   
+      --color-accent:    #E8501A;   
+      --color-accent-d:  #C43D10;  
+      --color-text:      #1A1A1A;
+      --color-muted:     #5E6573;
+      --color-border:    #E2E5EB;
+      --color-success:   #1A7A4A;
+
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                   Helvetica, Arial, sans-serif;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+
+      --max-w: 560px;
+      --pad-x: 20px;
+    }
+
+    /* ── 2. RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: var(--color-primary); text-decoration: none; }
+
+    /* ── 3. LAYOUT UTILITIES ── */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: var(--pad-x);
+      padding-right: var(--pad-x);
+    }
+
+    /* ── 4. HEADER ── */
+    .site-header {
+      padding: 16px var(--pad-x);
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-bg);
+    }
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: var(--color-accent);
+    }
+    .header-phone {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    /* ── 5. HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #EEF3FB 0%, #FFFFFF 60%);
+      padding: 48px var(--pad-x) 40px;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      background: #FEF0EB;
+      border: 1px solid #F9C9B8;
+      border-radius: 20px;
+      padding: 4px 14px;
+      margin-bottom: 18px;
+    }
+    .hero-headline {
+      font-size: clamp(26px, 6vw, 36px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--color-text);
+      margin-bottom: 14px;
+    }
+    .hero-headline em {
+      font-style: normal;
+      color: var(--color-primary);
+    }
+    .hero-sub {
+      font-size: 16px;
+      color: var(--color-muted);
+      line-height: 1.6;
+      max-width: 440px;
+      margin: 0 auto 32px;
+    }
+
+    /* ── 6. TRUST BAR ── */
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 18px;
+      margin-bottom: 36px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--color-muted);
+    }
+    .trust-item .icon {
+      font-size: 15px;
+    }
+    .trust-item strong {
+      color: var(--color-text);
+    }
+
+    /* ── 7. FORM CARD ── */
+    .form-card {
+      background: var(--color-bg);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      text-align: left;
+    }
+    .form-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    .form-card-sub {
+      font-size: 13px;
+      color: var(--color-muted);
+      margin-bottom: 20px;
+    }
+    .form-field {
+      margin-bottom: 14px;
+    }
+    .form-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 6px;
+    }
+    .form-field input {
+      width: 100%;
+      height: 48px;
+      padding: 0 14px;
+      font-size: 16px;
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      outline: none;
+      transition: border-color 0.15s;
+      webkit-appearance: none;
+    }
+    .form-field input:focus {
+      border-color: var(--color-primary);
+      background: #fff;
+    }
+    .form-field input::placeholder {
+      color: #A0A8B4;
+    }
+    .btn-cta {
+      display: block;
+      width: 100%;
+      height: 52px;
+      margin-top: 18px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: var(--font-body);
+      color: #fff;
+      background: var(--color-accent);
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-cta:hover  { background: var(--color-accent-d); }
+    .btn-cta:active { transform: scale(0.98); }
+    .form-reassure {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--color-muted);
+      text-align: center;
+    }
+
+    /* ── 8. THANK-YOU STATE ── */
+    .thank-you {
+      display: none;
+      text-align: center;
+      padding: 36px 24px;
+    }
+    .thank-you-icon {
+      width: 56px;
+      height: 56px;
+      background: #EAF7EF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 26px;
+    }
+    .thank-you h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--color-text);
+    }
+    .thank-you p {
+      font-size: 14px;
+      color: var(--color-muted);
+      line-height: 1.6;
+    }
+
+    /* ── 9. WHY SECTION ── */
+    .why-section {
+      padding: 48px var(--pad-x);
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+    }
+    .why-section .container { text-align: center; }
+    .why-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 28px;
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .why-item {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+    }
+    .why-item-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .why-item-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    .why-item-desc {
+      font-size: 12px;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+
+    /* ── 10. REVIEWS STRIP ── */
+    .reviews-strip {
+      padding: 36px var(--pad-x);
+      background: var(--color-bg);
+      border-top: 1px solid var(--color-border);
+    }
+    .reviews-strip .container { text-align: center; }
+    .reviews-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--color-muted);
+      margin-bottom: 16px;
+    }
+    .review-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .review-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      text-align: left;
+    }
+    .review-stars { color: #F5A623; font-size: 14px; margin-bottom: 6px; }
+    .review-text {
+      font-size: 13px;
+      color: var(--color-text);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .review-author { font-size: 12px; color: var(--color-muted); font-weight: 600; }
+
+    /* ── 11. FOOTER ── */
+    .site-footer {
+      padding: 24px var(--pad-x);
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .site-footer p {
+      font-size: 12px;
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    /* ── 12. MOBILE OVERRIDES ── */
+    @media (max-width: 480px) {
+      .hero { padding: 36px var(--pad-x) 32px; }
+      .form-card { padding: 22px 18px; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── 13. REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      .btn-cta { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════
+       HEADER
+  ══════════════════════════════ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">Ortho<span>Now</span></div>
+      <a class="header-phone" href="tel:+918000000000">📞 Call us</a>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════
+       HERO + FORM
+  ══════════════════════════════ -->
+  <main>
+    <section class="hero">
+      <div class="container">
+
+        <!-- Eyebrow label -->
+        <div class="hero-eyebrow">Bengaluru · Free Consultation</div>
+
+        <!-- Headline — addresses exact pain point -->
+        <h1 class="hero-headline">
+          Knee or back pain?<br />
+          <em>See a specialist today.</em>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero-sub">
+          Get an expert orthopaedic opinion at OrthoNow —
+          AIIMS-trained doctors, same-week appointments,
+          9 clinics across Bengaluru.
+        </p>
+
+        <!-- Trust bar -->
+        <div class="trust-bar" role="list">
+          <div class="trust-item" role="listitem">
+            <span class="icon">⭐</span>
+            <span><strong>4.8 / 5</strong> rating</span>
+          </div>
+          <div class="trust-item" role="listitem">
+            <span class="icon">🏥</span>
+            <span><strong>9 clinics</strong> in Bengaluru</span>
+          </div>
+          <div class="trust-item" role="listitem">
+            <span class="icon">👩‍⚕️</span>
+            <span><strong>12,000+</strong> consultations</span>
+          </div>
+        </div>
+
+        <!-- ── BOOKING FORM ── -->
+        <div class="form-card" id="form-section">
+          <p class="form-card-title">Book your free consultation</p>
+          <p class="form-card-sub">Takes 30 seconds. No payment needed.</p>
+
+          <form id="booking-form" novalidate>
+
+            <div class="form-field">
+              <label for="patient-name">Your name</label>
+              <input
+                type="text"
+                id="patient-name"
+                name="patient_name"
+                placeholder="e.g. Rahul Sharma"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="patient-phone">Phone number</label>
+              <input
+                type="tel"
+                id="patient-phone"
+                name="patient_phone"
+                placeholder="e.g. 98765 43210"
+                autocomplete="tel"
+                inputmode="numeric"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn-cta">
+              Book Free Consultation →
+            </button>
+
+          </form>
+
+          <p class="form-reassure">
+            🔒 Your details are private. No spam, ever.
+          </p>
+        </div>
+
+        <!-- ── THANK-YOU STATE (shown after submit) ── -->
+        <div class="form-card thank-you" id="thank-you" role="alert" aria-live="polite">
+          <div class="thank-you-icon">✅</div>
+          <h2>You're booked in!</h2>
+          <p>
+            Our team will call you within 2 hours to confirm your appointment.
+            Check your phone — we'll reach out on the number you provided.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════
+         WHY ORTHONOW
+    ══════════════════════════════ -->
+    <section class="why-section" aria-label="Why OrthoNow">
+      <div class="container">
+        <h2 class="why-title">Why patients choose OrthoNow</h2>
+        <div class="why-grid">
+
+          <div class="why-item">
+            <div class="why-item-icon">🎓</div>
+            <div class="why-item-title">AIIMS-trained doctors</div>
+            <div class="why-item-desc">Specialists with top-tier training in orthopaedics</div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-icon">📅</div>
+            <div class="why-item-title">Same-week slots</div>
+            <div class="why-item-desc">No month-long waits — see a doctor this week</div>
+          </div>
+
+          <div class="why-item">
+            <div class="why-item-icon">📍</div>
+            <div class="why-item-title">9 Bengaluru clinics</div>
+            <div class="why-item-desc">Near Koramangala, Indiranagar, HSR, Whitefield & more</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════
+         PATIENT REVIEWS
+    ══════════════════════════════ -->
+    <section class="reviews-strip" aria-label="Patient reviews">
+      <div class="container">
+        <p class="reviews-label">What patients say</p>
+        <div class="review-cards">
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "I had severe knee pain for 6 months. OrthoNow gave me a
+              diagnosis in one visit and I was back to running in 3 weeks."
+            </p>
+            <div class="review-author">Priya M. · Koramangala</div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">
+              "Booked online in 2 minutes. The doctor was thorough and
+              explained everything clearly. No unnecessary tests pushed."
+            </p>
+            <div class="review-author">Arjun K. · HSR Layout</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════
+       FOOTER
+  ══════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © 2024 OrthoNow Healthcare Pvt. Ltd. · 9 clinics across Bengaluru,
+        Hyderabad &amp; Chennai<br />
+        <a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════
+       JAVASCRIPT
+       - Form validation
+       - GTM dataLayer push on submit
+       - Thank-you state (no page reload)
+  ══════════════════════════════ -->
+  <script>
+    // ── Initialise dataLayer safely (in case GTM hasn't loaded yet) ──
+    window.dataLayer = window.dataLayer || [];
+
+    // ── Grab DOM elements ──
+    var form        = document.getElementById('booking-form');
+    var formSection = document.getElementById('form-section');
+    var thankYou    = document.getElementById('thank-you');
+    var nameInput   = document.getElementById('patient-name');
+    var phoneInput  = document.getElementById('patient-phone');
+
+    // ── Form submit handler ──
+    form.addEventListener('submit', function (e) {
+
+      // Prevent default page reload
+      e.preventDefault();
+
+      // Basic validation — both fields must be filled
+      var name  = nameInput.value.trim();
+      var phone = phoneInput.value.trim();
+
+      if (!name) {
+        nameInput.focus();
+        nameInput.style.borderColor = '#E8501A';
+        return;
+      }
+
+      if (!phone || phone.length < 8) {
+        phoneInput.focus();
+        phoneInput.style.borderColor = '#E8501A';
+        return;
+      }
+
+      // ──────────────────────────────────────────────
+      // GTM DATALAYER PUSH
+      // Fires ONLY on submit — not on page load.
+      // Visible in browser console (F12 → Console)
+      // by typing: window.dataLayer
+      // ──────────────────────────────────────────────
+      window.dataLayer.push({
+        'event':        'consultation_form_submitted',
+        'form_name':    'orthonow_booking',
+        'page_source':  'landing_page_task02',
+        'clinic_city':  'Bengaluru',
+        'campaign':     'book_consultation'
+      });
+
+      // Log to console for Loom demo verification
+      console.log('[OrthoNow] dataLayer push fired:', window.dataLayer);
+
+      // ── Show thank-you state without page reload ──
+      formSection.style.display = 'none';
+      thankYou.style.display    = 'block';
+
+      // ── Scroll to thank-you so user sees it on mobile ──
+      thankYou.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    });
+
+    // ── Reset field border colour on input ──
+    nameInput.addEventListener('input', function () {
+      this.style.borderColor = '';
+    });
+    phoneInput.addEventListener('input', function () {
+      this.style.borderColor = '';
+    });
+  </script>
+
+</body>
+</html>
