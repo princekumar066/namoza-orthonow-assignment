@@ -1,10 +1,13 @@
+// ================================================
 // OrthoNow — GTM dataLayer Push Implementation
 // Task 01 | Namoza Developer Assignment
 // Developer: Prince Kumar
+// ================================================
 
 window.dataLayer = window.dataLayer || [];
 
 // STEP 1: User selects clinic + specialty
+// Place this on the onClick of Step 1 "Next" button
 function trackStep1() {
   window.dataLayer.push({
     'event':           'booking_step_complete',
@@ -17,6 +20,8 @@ function trackStep1() {
 }
 
 // STEP 2: User enters name, phone, date
+// Place this on the onClick of Step 2 "Next" button
+// NOTE: pass step1 values forward so they are not lost
 function trackStep2(clinicLocation, specialty) {
   window.dataLayer.push({
     'event':           'booking_step_complete',
@@ -30,6 +35,7 @@ function trackStep2(clinicLocation, specialty) {
 }
 
 // STEP 3: Booking confirmed
+// Place this when confirmation screen loads
 function trackStep3(clinicLocation, specialty, date) {
   window.dataLayer.push({
     'event':           'booking_confirmed',
